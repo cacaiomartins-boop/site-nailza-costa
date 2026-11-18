@@ -1,5 +1,3 @@
-import { Lotus } from "./ui";
-
 export function Logo({
   mark = true,
   className = "",
@@ -11,7 +9,15 @@ export function Logo({
 }) {
   return (
     <span className={`inline-flex items-center gap-3 ${className}`}>
-      {mark && <Lotus base={false} sw={1.6} className={size === "sm" ? "h-7 w-auto" : "h-9 w-auto"} />}
+      {mark && (
+        <img
+          src="/img/logo-mark.webp"
+          alt=""
+          width={405}
+          height={520}
+          className={`w-auto ${size === "sm" ? "h-11 lg:h-12" : "h-14"}`}
+        />
+      )}
       <span className="flex flex-col leading-none">
         <span className="block overflow-hidden pb-[3px]">
           <span

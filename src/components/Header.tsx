@@ -106,7 +106,7 @@ export function Header() {
           <HashLink hash="#inicio" onClick={close} className={`${dark ? "text-ivory" : "text-ink"} transition-colors duration-700`}>
             <span className="sr-only">Nailza Costa, psicóloga. Ir para o topo</span>
             <span aria-hidden="true">
-              <Logo size="sm" className={dark ? "text-ivory [&_svg]:text-gold-soft" : "[&_svg]:text-bronze"} />
+              <Logo size="sm" className={dark ? "text-ivory" : ""} />
             </span>
           </HashLink>
 

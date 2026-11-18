@@ -5,7 +5,7 @@ import { clinic, msg, themes, waLink } from "../data/clinic";
 import { gsap, MQ, getLenis, scrollToTarget, useMotion } from "../motion/setup";
 import { FitBox } from "./FitBox";
 import { HashLink } from "./links";
-import { Lotus, WhatsAppButton, WhatsAppIcon, renderEm } from "./ui";
+import { WhatsAppButton, WhatsAppIcon, renderEm } from "./ui";
 
 export function Footer() {
   const topRef = useRef<HTMLButtonElement>(null);
@@ -26,8 +26,8 @@ export function Footer() {
         },
       );
       const wm = q("[data-wordmark]");
-      const petals = qa("[data-wordmark] .lotus-petal");
-      gsap.set(petals, { drawSVG: "50% 50%" });
+      const mark = qa("[data-wm-mark]");
+      gsap.set(mark, { autoAlpha: 0, y: 16 });
       gsap.set(qa("[data-wm-line]"), { scaleX: 0 });
       gsap.set(qa("[data-wm-dot]"), { scale: 0 });
       gsap.set(qa("[data-wm-char] > span"), { yPercent: 108 });
@@ -36,7 +36,7 @@ export function Footer() {
           defaults: { ease: "none" },
           scrollTrigger: { trigger: wm, start: "top bottom", end: "clamp(bottom bottom)", scrub: 1.2 },
         })
-        .to(petals, { drawSVG: "0% 100%", duration: 0.9, stagger: 0.08 }, 0)
+        .to(mark, { autoAlpha: 1, y: 0, duration: 0.9, ease: "power2.out" }, 0)
         .to(qa("[data-wm-line]"), { scaleX: 1, duration: 1, ease: "power2.out" }, 0.15)
         .to(qa("[data-wm-dot]"), { scale: 1, duration: 0.35, ease: "back.out(2)" }, 0.3)
         .to(qa("[data-wm-char] > span"), { yPercent: 0, duration: 0.9, stagger: 0.06, ease: "power2.out" }, 0.35);
@@ -134,7 +134,7 @@ export function Footer() {
               <span data-wm-dot className="size-1.5 rounded-full bg-current" />
               <span data-wm-line className="h-px flex-1 origin-left bg-current opacity-50" />
             </div>
-            <Lotus base={false} sw={1.2} className="h-12 w-auto sm:h-16 lg:h-[clamp(2.25rem,7svh,4rem)]" />
+            <img data-wm-mark src="/img/logo-mark.webp" alt="" width={405} height={520} loading="lazy" className="h-16 w-auto sm:h-20 lg:h-[clamp(2.75rem,9svh,5rem)]" />
             <div className="flex flex-1 items-center gap-3">
               <span data-wm-line className="h-px flex-1 origin-right bg-current opacity-50" />
               <span data-wm-dot className="size-1.5 rounded-full bg-current" />

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap, getLenis, shouldShowIntro } from "../motion/setup";
-import { Lotus } from "./ui";
 import { Logo } from "./Logo";
 
 export function Loader() {
@@ -38,16 +37,12 @@ export function Loader() {
     };
 
     const ctx = gsap.context(() => {
-      const petals = root.querySelectorAll(".lotus-petal");
-      const rules = root.querySelectorAll(".lotus-rule");
-      const dot = root.querySelectorAll(".lotus-dot");
+      const mark = root.querySelector("[data-loader-mark]");
       const word = root.querySelector(".logo-word");
       const role = root.querySelector(".logo-role");
       const bar = root.querySelector("[data-bar]");
       const tl = gsap.timeline({ onComplete: finish });
-      tl.fromTo(petals, { drawSVG: "50% 50%" }, { drawSVG: "0% 100%", duration: 1.2, ease: "power2.inOut", stagger: 0.12 }, 0)
-        .fromTo(dot, { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.6, ease: "back.out(2)" }, 0.4)
-        .fromTo(rules, { autoAlpha: 0, drawSVG: "100% 100%" }, { autoAlpha: 1, drawSVG: "0% 100%", duration: 0.9, ease: "breath" }, 0.45)
+      tl.fromTo(mark, { autoAlpha: 0, y: 22, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 1.2, ease: "power2.out" }, 0)
         .fromTo(word, { yPercent: 105 }, { yPercent: 0, duration: 0.9 }, 0.65)
         .fromTo(role, { autoAlpha: 0, scaleX: 1.22 }, { autoAlpha: 1, scaleX: 1, duration: 1, ease: "power3.out" }, 0.8)
         .fromTo(bar, { scaleX: 0 }, { scaleX: 1, duration: 1.5, ease: "power2.inOut", transformOrigin: "0% 50%" }, 0)
@@ -79,7 +74,9 @@ export function Loader() {
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-cream text-bronze"
       style={{ clipPath: "inset(0% 0% 0% 0%)" }}
     >
-      <Lotus base sw={2} className="w-[7.5rem] sm:w-[8.75rem]" />
+      <div data-loader-mark className="invisible">
+        <img src="/img/logo-mark.webp" alt="" width={405} height={520} className="h-[12rem] w-auto sm:h-[15rem]" />
+      </div>
       <div className="mt-8 text-ink">
         <Logo mark={false} size="md" />
       </div>
