@@ -106,5 +106,3 @@ export function useMotion<T extends HTMLElement = HTMLElement>(
   }, deps);
   return ref;
 }
-
-export const wm = (cb: () => void) => cb;

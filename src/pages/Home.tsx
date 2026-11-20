@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Hero } from "../components/Hero";
 import { Mirror } from "../components/Mirror";
 import { Manifesto } from "../components/Manifesto";
@@ -9,15 +8,19 @@ import { Online } from "../components/Online";
 import { Reviews } from "../components/Reviews";
 import { Faq } from "../components/Faq";
 import { Contact } from "../components/Contact";
+import { Seo } from "../components/Seo";
+import { clinic } from "../data/clinic";
 
-export const HOME_TITLE = "Psicóloga online | Psicanálise para adultos no Brasil e exterior · Nailza Costa";
-
-export default function Home() {
-  useEffect(() => {
-    document.title = HOME_TITLE;
-  }, []);
+// notFound: endereço que não existe. Mostra a mesma página, mas sem canonical e com noindex.
+export default function Home({ notFound = false }: { notFound?: boolean }) {
   return (
     <>
+      <Seo
+        title={clinic.seo.homeTitle}
+        description={clinic.seo.homeDescription}
+        path={notFound ? null : "/"}
+        noindex={notFound}
+      />
       <Hero />
       <Mirror />
       <Manifesto />

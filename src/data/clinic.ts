@@ -15,8 +15,16 @@ export const clinic = {
   whatsapp: "5521995993581",
   whatsappDisplay: "(21) 99599-3581",
   doctoralia: "https://www.doctoralia.com.br/perfil/nailza-costa",
-  // TODO: domínio ainda não definido (ex.: nailzacosta.com.br). Preencher para ativar canonical/OG.
-  siteUrl: "",
+  // Endereço principal (com www e https). Usado em canonical, og:url, sitemap e dados estruturados.
+  siteUrl: "https://www.nailzacosta.com.br",
+  seo: {
+    homeTitle: "Psicóloga online | Psicanálise para adultos · Nailza Costa",
+    homeDescription:
+      "Nailza Costa, psicóloga (CRP 05/26271). Psicoterapia online para adultos, no Brasil e para brasileiros no exterior. Escuta psicanalítica e acolhedora.",
+    privacyTitle: "Política de privacidade | Nailza Costa",
+    privacyDescription:
+      "Como os dados são tratados no site da psicóloga Nailza Costa, de acordo com a Lei Geral de Proteção de Dados (LGPD).",
+  },
   // TODO: Instagram @psinailzacosta existe mas ela não alimenta; fica de fora até ela decidir.
   instagram: "",
   photoHero: "/img/nailza.webp",

@@ -1,14 +1,12 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Seo } from "../components/Seo";
 import { clinic } from "../data/clinic";
 
 export default function Privacy() {
-  useEffect(() => {
-    document.title = `Política de privacidade · ${clinic.name}`;
-  }, []);
   const h = "mt-10 font-display text-[1.7rem] text-ink";
   return (
     <section className="bg-cream pb-24 pt-36 sm:pt-44">
+      <Seo title={clinic.seo.privacyTitle} description={clinic.seo.privacyDescription} path="/privacidade" />
       <div className="container-site max-w-[46rem]">
         <p className="text-[.75rem] font-medium uppercase tracking-[.3em] text-bronze">Privacidade</p>
         <h1 className="mt-4 text-[clamp(2.4rem,5vw,3.8rem)]">Política de privacidade</h1>

@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { clinic, msg, themes, waLink } from "../data/clinic";
+import { Seo, themeDescription, themeTitle } from "../components/Seo";
 import { Eyebrow, GhostLotus, Lotus, Reveal, SplitHeading, WhatsAppButton, renderEm } from "../components/ui";
 import { FaqList } from "../components/Faq";
 import { FitBox } from "../components/FitBox";
@@ -14,22 +14,26 @@ export default function ThemePage() {
   const { slug } = useParams();
   const theme = themes.find((t) => t.slug === slug);
 
-  useEffect(() => {
-    if (!theme) return;
-    document.title = `Terapia para ${theme.label.toLowerCase()} online · ${clinic.name}`;
-    const meta = document.querySelector('meta[name="description"]');
-    const prev = meta?.getAttribute("content") ?? "";
-    meta?.setAttribute("content", `${theme.short} Psicoterapia online com ${clinic.name}, ${clinic.crp}.`.slice(0, 160));
-    return () => {
-      meta?.setAttribute("content", prev);
-    };
-  }, [theme]);
-
   if (!theme) return <Navigate to="/" replace />;
   const others = themes.filter((t) => t.slug !== theme.slug);
+  const pageUrl = `${clinic.siteUrl}/terapia/${theme.slug}`;
 
   return (
     <div key={theme.slug}>
+      <Seo
+        title={themeTitle(theme.label)}
+        description={themeDescription(theme.short)}
+        path={`/terapia/${theme.slug}`}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Início", item: `${clinic.siteUrl}/` },
+            { "@type": "ListItem", position: 2, name: "Como posso ajudar", item: `${clinic.siteUrl}/#como-ajudo` },
+            { "@type": "ListItem", position: 3, name: theme.label, item: pageUrl },
+          ],
+        }}
+      />
       {/* HERO */}
       <section className="fit-section relative overflow-clip bg-[linear-gradient(180deg,var(--color-cream),var(--color-blush)_180%)] pb-20 pt-32 sm:pt-40 lg:!pb-[clamp(1.5rem,5svh,3rem)] lg:!pt-[clamp(5.25rem,13svh,6.5rem)]">
         <GhostLotus className="-right-24 top-10 h-[40rem] w-[50rem] max-w-none" />

@@ -40,7 +40,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/terapia/:slug" element={<ThemePage />} />
           <Route path="/privacidade" element={<Privacy />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<Home notFound />} />
         </Routes>
       </main>
       <Footer />

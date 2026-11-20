@@ -140,5 +140,3 @@ export function Process() {
     </section>
   );
 }
-
-export { bloom };

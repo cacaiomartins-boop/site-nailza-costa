@@ -194,7 +194,7 @@ export function Themes() {
                       <WhatsAppButton href={waLink(msg.theme(th.label))} variant="outline" icon="none" className="w-full">
                         {th.cta}
                       </WhatsAppButton>
-                      <ArrowLink to={`/terapia/${th.slug}`}>Saiba mais</ArrowLink>
+                      <ArrowLink to={`/terapia/${th.slug}`}>Saiba mais<span className="sr-only"> sobre {th.label.toLowerCase()}</span></ArrowLink>
                     </div>
                   </div>
                 </article>
@@ -239,5 +239,3 @@ export function Themes() {
     </div>
   );
 }
-
-export { Link };
