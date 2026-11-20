@@ -165,12 +165,12 @@ export function Eyebrow({
       className={`flex items-center gap-4 ${dark ? "text-gold-soft" : "text-bronze"} ${className}`}
     >
       {n && (
-        <span data-eb-num className="font-display text-[1.35rem] italic">
+        <span data-eb-num className={`font-display text-[1.35rem] italic ${dark ? "" : "text-bronze-ink"}`}>
           {n}
         </span>
       )}
       <span data-eb-line className="h-px w-10 bg-current opacity-60" />
-      <span data-eb-label className="text-[.75rem] font-medium uppercase tracking-[.3em]">
+      <span data-eb-label className={`text-[.75rem] font-medium uppercase tracking-[.3em] ${dark ? "" : "text-bronze-ink"}`}>
         {label}
       </span>
     </div>

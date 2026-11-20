@@ -104,7 +104,7 @@ export function Process() {
           <ol className="grid gap-10 lg:grid-cols-4 lg:gap-0">
             {p.steps.map((s, i) => (
               <li key={s.t} data-step className="relative flex flex-col pl-14 lg:pl-0 lg:pr-8">
-                <span data-lit className="font-display text-[2.6rem] italic leading-none text-gold sm:text-[3.4rem]">
+                <span data-lit className="font-display text-[2.6rem] italic leading-none text-gold-deep sm:text-[3.4rem]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="absolute left-[.7rem] top-[.8rem] flex items-center lg:static lg:mt-6 lg:w-full">

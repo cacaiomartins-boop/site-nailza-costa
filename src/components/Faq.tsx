@@ -36,7 +36,7 @@ export function FaqList({
             onClick={() => toggle(i)}
             className="group flex w-full items-center gap-5 py-7 text-left sm:gap-7 sm:py-8 lg:gap-4 lg:py-[clamp(.7rem,2.3svh,1.6rem)]"
           >
-            <span className="font-display text-[1.2rem] italic text-bronze">{String(i + 1).padStart(2, "0")}</span>
+            <span className="font-display text-[1.2rem] italic text-bronze-ink">{String(i + 1).padStart(2, "0")}</span>
             <span
               className={`flex-1 font-display text-[1.35rem] font-medium leading-[1.25] transition-colors duration-500 ease-silk group-hover:text-wine sm:text-[1.5rem] lg:text-[clamp(1.05rem,2.4svh,1.35rem)] ${isOpen ? "text-wine" : "text-ink"}`}
             >

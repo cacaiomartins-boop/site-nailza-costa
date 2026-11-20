@@ -67,7 +67,7 @@ export function About() {
       <div className="container-site relative grid gap-16 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-center lg:gap-x-14 lg:gap-y-0">
         {/* conjunto visual */}
         <div>
-          <div className="relative mx-auto w-full max-w-[28rem] pb-32 [container-type:inline-size] sm:pb-16 lg:max-w-[min(28rem,calc((100svh_-_14rem)*0.8))] lg:pb-[clamp(2.5rem,7svh,4rem)]">
+          <div className="relative mx-auto w-full max-w-[28rem] [container-type:inline-size] lg:max-w-[min(28rem,calc((100svh_-_18rem)*0.8))]">
             <div
               data-about-arch
               className="relative rounded-t-[50cqw] rounded-b-[1.75rem] border border-bronze/25 bg-cream p-2 shadow-card"
@@ -86,16 +86,24 @@ export function About() {
                 </div>
               </div>
             </div>
-            <Seal text="PSICÓLOGA · CRP 05/26271 · ONLINE · BRASIL E EXTERIOR · " className="absolute bottom-0 -left-3 size-[7.5rem] sm:-left-8 sm:size-36" />
-            <div
-              data-stat-card
-              className="absolute bottom-0 -right-2 rounded-[1.5rem] border border-white/60 bg-ivory/75 px-4 py-3.5 shadow-soft backdrop-blur-xl sm:-right-8 sm:px-6 sm:py-5"
-            >
-              <p className="font-display text-[2.4rem] font-medium leading-[.9] tabular-nums text-bronze sm:text-[3.6rem]">
-                <span data-stat>{a.stat.value}</span>
-              </p>
-              <p className="mt-1 max-w-[11rem] text-[.875rem] leading-snug text-ink sm:text-[.98rem]">{a.stat.label}</p>
-              <p className="font-display italic text-bronze-deep">{a.stat.note}</p>
+            {/* Selo e cartão ficam no fluxo, logo abaixo do arco, e sobem só 2rem sobre a borda inferior
+                (menos que o respiro de baixo do arco). Assim a altura se ajusta sozinha, em qualquer tamanho
+                de tela ou de fonte, e nada cobre a assinatura. */}
+            <div className="relative z-10 -mt-8 flex items-end justify-between gap-2.5">
+              <Seal
+                text="PSICÓLOGA · CRP 05/26271 · ONLINE · BRASIL E EXTERIOR · "
+                className="relative -ml-3 size-[6.5rem] shrink-0 sm:-ml-8 sm:size-36"
+              />
+              <div
+                data-stat-card
+                className="relative -mr-2 rounded-[1.5rem] border border-white/60 bg-ivory/75 px-4 py-3.5 shadow-soft backdrop-blur-xl sm:-mr-8 sm:px-6 sm:py-5"
+              >
+                <p className="font-display text-[2.4rem] font-medium leading-[.9] tabular-nums text-bronze sm:text-[3.6rem]">
+                  <span data-stat>{a.stat.value}</span>
+                </p>
+                <p className="mt-1 max-w-[9.5rem] text-[.875rem] leading-snug text-ink sm:max-w-[11rem] sm:text-[.98rem]">{a.stat.label}</p>
+                <p className="font-display italic text-bronze-deep">{a.stat.note}</p>
+              </div>
             </div>
           </div>
         </div>

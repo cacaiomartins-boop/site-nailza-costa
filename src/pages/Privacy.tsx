@@ -8,7 +8,7 @@ export default function Privacy() {
     <section className="bg-cream pb-24 pt-36 sm:pt-44">
       <Seo title={clinic.seo.privacyTitle} description={clinic.seo.privacyDescription} path="/privacidade" />
       <div className="container-site max-w-[46rem]">
-        <p className="text-[.75rem] font-medium uppercase tracking-[.3em] text-bronze">Privacidade</p>
+        <p className="text-[.75rem] font-medium uppercase tracking-[.3em] text-bronze-ink">Privacidade</p>
         <h1 className="mt-4 text-[clamp(2.4rem,5vw,3.8rem)]">Política de privacidade</h1>
         <p className="mt-6">
           Esta página explica, de forma simples, como os dados são tratados neste site, de acordo com a Lei Geral de

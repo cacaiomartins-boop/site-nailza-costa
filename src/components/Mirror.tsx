@@ -156,7 +156,7 @@ export function Mirror() {
                     data-mirror-line
                     className="grid grid-cols-[1.75rem_1fr_auto] items-baseline gap-x-5 py-6 sm:grid-cols-[2rem_1fr_auto] sm:gap-x-7 sm:py-7"
                   >
-                    <span className="text-[.8rem] font-medium tracking-[.14em] text-bronze">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-[.8rem] font-medium tracking-[.14em] text-bronze-ink">{String(i + 1).padStart(2, "0")}</span>
                     <span data-mirror-text className="font-display text-[1.375rem] leading-[1.25] text-ink sm:text-[1.6rem]">
                       {l}
                     </span>

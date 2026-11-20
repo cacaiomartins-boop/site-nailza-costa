@@ -99,7 +99,7 @@ export function Hero() {
         <div data-hero-text className="flex flex-col lg:self-center lg:pr-8 xl:pr-16">
           <div data-hero-in data-hero-eyebrow className="flex items-center gap-3 text-bronze sm:gap-4">
             <span data-hero-eyebrow-line className="h-px w-8 bg-current opacity-70 sm:w-14" />
-            <ul className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[.72rem] font-medium uppercase tracking-[.3em] sm:text-[.75rem]">
+            <ul className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[.72rem] font-medium uppercase tracking-[.3em] text-bronze-ink sm:text-[.75rem]">
               {clinic.hero.eyebrow.map((w, i) => (
                 <li key={w} className="flex items-center gap-2.5">
                   {i > 0 && <span className="size-[3px] rounded-full bg-current" aria-hidden="true" />}
@@ -164,7 +164,7 @@ export function Hero() {
 
           <div className="mt-10 hidden items-center gap-4 text-bronze lg:mt-[clamp(.35rem,1.6svh,1.5rem)] lg:flex">
             <span data-hero-cue-line className="h-12 w-px bg-bronze/50 lg:h-[clamp(1.5rem,5svh,3rem)]" />
-            <span data-hero-in data-hero-cue-text className="flex items-center gap-3 text-[.78rem] font-medium uppercase tracking-[.26em]">
+            <span data-hero-in data-hero-cue-text className="flex items-center gap-3 text-[.78rem] font-medium uppercase tracking-[.26em] text-bronze-ink">
               <span className="flex size-8 items-center justify-center rounded-full border border-bronze/40">
                 <ArrowDown data-cue-arrow className="size-4" aria-hidden="true" />
               </span>

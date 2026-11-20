@@ -79,7 +79,7 @@ export default function ThemePage() {
               <ul className="divide-y divide-bronze/25 border-y border-bronze/25">
                 {theme.mirror.map((m, i) => (
                   <li key={i} data-reveal-item className="grid grid-cols-[2rem_1fr] gap-4 py-6 lg:py-[clamp(.55rem,2svh,1.5rem)]">
-                    <span className="text-[.8rem] font-medium tracking-[.14em] text-bronze">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-[.8rem] font-medium tracking-[.14em] text-bronze-ink">{String(i + 1).padStart(2, "0")}</span>
                     <span className="font-display text-[1.45rem] leading-[1.25] text-ink sm:text-[1.7rem] lg:text-[clamp(1.15rem,3svh,1.7rem)]">{m}</span>
                   </li>
                 ))}

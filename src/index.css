@@ -39,6 +39,8 @@
   --color-gold-soft: #d8c09a;
   --color-bronze: #926c3e;
   --color-bronze-deep: #6f512d;
+  --color-bronze-ink: #7a5a31; /* bronze mais escuro, só para textos pequenos (contraste AA) */
+  --color-gold-deep: #a07c47; /* dourado um pouco mais escuro para os números grandes do processo */
   --color-wine: #7a3a34;
   --color-wine-deep: #5c2924;
   --color-sage: #7c8466;
