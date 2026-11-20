@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Loader } from "./components/Loader";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -25,13 +25,15 @@ export default function App() {
   useEffect(() => {
     initLenis();
     (window as unknown as { __motionReady: boolean }).__motionReady = true;
+    // o HTML pré-renderizado fica oculto até o React montar (evita flash de layout sem animação)
+    document.getElementById("root")?.removeAttribute("data-prerendered");
     const onLoad = () => ScrollTrigger.refresh();
     window.addEventListener("load", onLoad);
     return () => window.removeEventListener("load", onLoad);
   }, []);
 
   return (
-    <BrowserRouter>
+    <>
       <ScrollManager />
       <Loader />
       <Header />
@@ -45,6 +47,6 @@ export default function App() {
       </main>
       <Footer />
       <FloatingWhatsApp />
-    </BrowserRouter>
+    </>
   );
 }

@@ -14,11 +14,13 @@ gsap.defaults({ ease: "silk", duration: 1.1 });
 export { gsap, ScrollTrigger, SplitText };
 
 // Só em desenvolvimento: ?motion=1 ignora "reduzir movimento" para testar as animações.
-const FORCE = import.meta.env.DEV && new URLSearchParams(window.location.search).has("motion");
+// (No pré-render, feito em Node, não existe window: por isso os guards typeof window.)
+const IS_BROWSER = typeof window !== "undefined";
+const FORCE = IS_BROWSER && import.meta.env.DEV && new URLSearchParams(window.location.search).has("motion");
 if (FORCE) document.documentElement.classList.add("force-motion");
 const NP = FORCE ? "all" : "(prefers-reduced-motion: no-preference)";
 
-export const reduce = () => !FORCE && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+export const reduce = () => IS_BROWSER && !FORCE && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 export const MQ = {
   ok: NP,
@@ -59,6 +61,7 @@ export function scrollToTarget(target: string | number | HTMLElement, offset = -
 
 /* ---------- Abertura (loader) ---------- */
 const introWillShow = (() => {
+  if (!IS_BROWSER) return false;
   try {
     return !reduce() && !sessionStorage.getItem("site-intro-seen");
   } catch {

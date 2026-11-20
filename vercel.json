@@ -1,11 +1,14 @@
 {
-  "redirects": [{ "source": "/index.html", "destination": "/", "permanent": true }],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/:path+/index.html", "destination": "/:path+", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/terapia/:slug(brasileiros-no-exterior|ansiedade-e-angustia|depressao-e-humor|luto-e-perdas|relacionamentos-e-autoestima|saude-e-adoecimento|comida-corpo-e-emocao|familia-e-maternidade)",
-      "destination": "/index.html"
+      "destination": "/terapia/:slug/index.html"
     },
-    { "source": "/privacidade", "destination": "/index.html" }
+    { "source": "/privacidade", "destination": "/privacidade/index.html" }
   ],
   "headers": [
     {
