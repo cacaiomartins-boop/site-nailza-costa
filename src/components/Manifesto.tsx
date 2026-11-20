@@ -9,7 +9,7 @@ export function Manifesto() {
     const qa = (s: string) => Array.from(root.querySelectorAll(s));
     const shell = q("[data-manifesto-shell]");
     const text = q("[data-manifesto-text]") as HTMLElement;
-    const split = SplitText.create(text, { type: "words", wordsClass: "manifesto-word" });
+    const split = SplitText.create(text, { type: "words", wordsClass: "manifesto-word", aria: "none" });
     const words = split.words;
     const lotus = q("[data-manifesto-lotus]");
     const petals = qa(".lotus-petal");

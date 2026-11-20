@@ -190,6 +190,8 @@ export function Hero() {
                 <img
                   data-hero-photo
                   src={clinic.photoHero}
+                  srcSet="/img/nailza-480.webp 480w, /img/nailza.webp 874w"
+                  sizes="(min-width: 1024px) 30rem, min(92vw, 30rem)"
                   alt={`${clinic.name}, psicóloga, sorrindo, sentada em frente ao computador`}
                   width={874}
                   height={874}

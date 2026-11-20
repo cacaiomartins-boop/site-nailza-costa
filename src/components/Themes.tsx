@@ -217,7 +217,7 @@ export function Themes() {
       </div>
 
       <div className="container-site relative mt-10 flex items-center gap-6 group-data-[reel=on]/help:absolute group-data-[reel=on]/help:bottom-8 group-data-[reel=on]/help:left-0 group-data-[reel=on]/help:right-0 group-data-[reel=on]/help:mt-0">
-        <div className="flex items-baseline gap-1 font-display text-[1.4rem] italic text-bronze" aria-label={`Tema ${idx} de ${total}`}>
+        <div role="img" className="flex items-baseline gap-1 font-display text-[1.4rem] italic text-bronze" aria-label={`Tema ${idx} de ${total}`}>
           <span className="inline-block h-[1.6em] overflow-hidden leading-[1.6]" aria-hidden="true">
             <span className="flex flex-col transition-transform duration-700 ease-silk" style={{ transform: `translateY(-${Math.floor(idx / 10) * 10}%)` }}>
               {Array.from({ length: 10 }, (_, d) => <span key={d} className="h-[1.6em]">{d}</span>)}

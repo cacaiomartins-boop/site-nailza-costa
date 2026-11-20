@@ -34,7 +34,14 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="preload" as="image" href="/img/nailza.webp" fetchpriority="high" />
+    <link
+      rel="preload"
+      as="image"
+      href="/img/nailza.webp"
+      imagesrcset="/img/nailza-480.webp 480w, /img/nailza.webp 874w"
+      imagesizes="(min-width: 1024px) 30rem, min(92vw, 30rem)"
+      fetchpriority="high"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

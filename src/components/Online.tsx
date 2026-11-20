@@ -50,6 +50,8 @@ export function Online() {
                 <img
                   data-online-img
                   src={clinic.photoAbout}
+                  srcSet="/img/nailza-online-640.webp 640w, /img/nailza-online.webp 1280w"
+                  sizes="(min-width: 1024px) 44rem, 92vw"
                   alt="Consultório virtual: mesa com notebook, estante amarela com livros de Psicologia e poltrona ao fundo"
                   width={1280}
                   height={960}

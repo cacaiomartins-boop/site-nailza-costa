@@ -11,10 +11,10 @@ export function Logo({
     <span className={`inline-flex items-center gap-3 ${className}`}>
       {mark && (
         <img
-          src="/img/logo-mark.webp"
+          src={size === "sm" ? "/img/logo-mark-sm.webp" : "/img/logo-mark.webp"}
           alt=""
-          width={405}
-          height={520}
+          width={size === "sm" ? 125 : 405}
+          height={size === "sm" ? 160 : 520}
           className={`w-auto ${size === "sm" ? "h-11 lg:h-12" : "h-14"}`}
         />
       )}
