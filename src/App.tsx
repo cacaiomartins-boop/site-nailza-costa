@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Loader } from "./components/Loader";
 import { Header } from "./components/Header";
@@ -22,11 +22,15 @@ function ScrollManager() {
 }
 
 export default function App() {
+  // O HTML pré-renderizado fica com display:none até o React montar (sem custo de layout e sem flash).
+  // Layout effect: roda logo após montar o DOM e antes dos efeitos de medição/animação.
+  useLayoutEffect(() => {
+    document.getElementById("root")?.removeAttribute("data-prerendered");
+  }, []);
+
   useEffect(() => {
     initLenis();
     (window as unknown as { __motionReady: boolean }).__motionReady = true;
-    // o HTML pré-renderizado fica oculto até o React montar (evita flash de layout sem animação)
-    document.getElementById("root")?.removeAttribute("data-prerendered");
     const onLoad = () => ScrollTrigger.refresh();
     window.addEventListener("load", onLoad);
     return () => window.removeEventListener("load", onLoad);

@@ -49,10 +49,10 @@
       rel="stylesheet"
     />
     <style>
-      #root[data-prerendered] { visibility: hidden; }
-      .motion-fail #root[data-prerendered] { visibility: visible; }
+      #root[data-prerendered] { display: none; }
+      .motion-fail #root[data-prerendered] { display: block; }
     </style>
-    <noscript><style>#root[data-prerendered] { visibility: visible; }</style></noscript>
+    <noscript><style>#root[data-prerendered] { display: block; }</style></noscript>
     <script>
       document.documentElement.classList.add("js-motion");
       setTimeout(function () {
