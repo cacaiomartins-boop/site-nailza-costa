@@ -30,7 +30,7 @@ export default function Privacy() {
         <h2 className={h}>Serviços de terceiros</h2>
         <p className="mt-3">
           Ao clicar nos botões de WhatsApp ou no link do Doctoralia, você sai deste site e passa a ser regido pelas
-          políticas dessas plataformas. As fontes são carregadas pelo Google Fonts.
+          políticas dessas plataformas. As fontes são servidas pelo próprio site.
         </p>
         <h2 className={h}>Sigilo profissional</h2>
         <p className="mt-3">

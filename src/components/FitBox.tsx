@@ -15,6 +15,7 @@ export function FitBox({ children, className = "" }: { children: ReactNode; clas
   useEffect(() => {
     const box = ref.current;
     if (!box) return;
+    box.style.transition = "none"; // com "reduzir movimento" o CSS global põe transição em tudo; aqui o ajuste tem de ser imediato
     const mql = window.matchMedia(DESKTOP);
     let last = 1;
     let timer = 0;
